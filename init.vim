@@ -6,6 +6,10 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'itchyny/lightline.vim'
     " gruvbox colorscheme. Seems to work the best for me.
     Plug 'morhetz/gruvbox'
+
+    " vim wiki
+    " Plug 'vimwiki/vimwiki'
+
     " autocomplete for everything
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -24,6 +28,10 @@ let mapleader="\<SPACE>"
     set smartindent        " Or I let the smartindent take care of it.
     set breakindent         " Indent line-breaks at the same level as code.
     set ttimeoutlen=100
+
+    set nocompatible
+    filetype plugin on
+    syntax on
 " }
 
 " Search {
@@ -130,10 +138,10 @@ let mapleader="\<SPACE>"
     nmap <tab> <C-w>w
 
     " move between tabs nicely
-    nmap <leader>wh <C-w>h<cr>
-    nmap <leader>wj <C-w>j<cr>
-    nmap <leader>wk <C-w>k<cr>
-    nmap <leader>wl <C-w>l<cr>
+    nmap <leader>wh <C-w>h
+    nmap <leader>wj <C-w>j
+    nmap <leader>wk <C-w>k
+    nmap <leader>wl <C-w>l
 
     " manage split sizes
     map <leader>ww <C-w>_
@@ -152,6 +160,9 @@ let mapleader="\<SPACE>"
 " }
 
 " Plugin Settings {
+    " Coc {
+        nmap <leader><leader> :CocCommand<cr>
+    " }
     " CtrlP {
         " Open file menu
         nnoremap <leader>o :CtrlP<cr>
