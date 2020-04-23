@@ -1,0 +1,160 @@
+*mysetup.txt*           My NVIM setup
+
+
+                My VIM setup     by Mark Hamilton
+
+
+My setup                                                       *MYSETUP* *mysetup*
+
+==============================================================================
+Tags
+*help* *vimrc* *myhelp* *config* *vimconfig* *crzytrane*
+
+==============================================================================
+0. Index                                                                 *Index*
+
+1. |Basics|
+2. |Shortcuts|
+3. |Extensions|
+
+==============================================================================
+1. Basics                                                               *Basics*
+
+1.1 Leader ~
+    The <leader> key that I use is <space>
+1.2 Spacemacs ~
+    Shortcuts that I like are brought over from the memonomics of spacemacs
+    eg. to edit the init.vim you type <leader>fed
+
+==============================================================================
+2. Shortcuts                                                         *Shortcuts*
+
+2.1 Navigation ~
+
+    go to top and bottom of the file ~
+    nnoremap <cr> G
+    nnoremap <BS> gg
+
+    move between tabs nicely ~
+    nmap <leader>wh <C-w>h
+    nmap <leader>wj <C-w>j
+    nmap <leader>wk <C-w>k
+    nmap <leader>wl <C-w>l
+
+2.2 Window Management ~
+
+    manage split sizes ~
+    map <leader>ww <C-w>_
+    map <leader>w\ <C-w>|
+    map <leader>we <C-w>=
+    map <leader>w- <C-w>-
+    map <leader>w= <C-w>+
+
+2.3 Buffer Management ~
+
+    move between buffers ~
+    nmap <leader>l :bnext<cr>
+    nmap <leader>h :bprevious<cr>
+    nmap <leader>k :tabnext<cr>
+    nmap <leader>j :tabprevious<cr>
+    nmap <tab> <C-w>w
+
+2.4 General ~
+
+    toggle between normal and relative numbering ~
+    nnoremap <leader>r :call NumberToggle()<cr>
+
+    quick replace ~
+    nmap <leader>s :%s//g<left><left>
+
+    hide highlighting ~
+    nnoremap <silent> <C-L> :nohlsearch<cr><C-L>
+
+    get quick help ~
+    nmap <leader>h :help crzytrane<cr>
+
+2.2 CtrlP ~
+
+        open file menu ~
+        nnoremap <leader>o :CtrlP<cr>
+
+        open buffer menu ~
+        nnoremap <leader>b :CtrlPBuffer<cr>
+
+        open most recently used files ~
+        nnoremap <leader>f :CtrlPMRUFiles<cr>
+
+2.3 Coc shortcuts ~
+
+    trigger completion ~
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+    code navigation ~
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    use `[g` and `]g` to navigate diagnostics ~
+    nmap <silent> [g <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+    symbol renaming ~
+    nmap <leader>rn <Plug>(coc-rename)
+
+    formatting selected code ~
+    xmap <leader>f  <Plug>(coc-format-selected)
+    nmap <leader>f  <Plug>(coc-format-selected)
+
+    applying codeAction to the selected region ~
+    example: `<leader>aap` for current paragrap ~
+    xmap <leader>a  <Plug>(coc-codeaction-selected)
+    nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+    remap keys for applying codeAction to the current line ~
+    nmap <leader>ac  <Plug>(coc-codeaction)
+    apply AutoFix to problem on the current line ~
+    nmap <leader>qf  <Plug>(coc-fix-current)
+
+    add `:Format` command to format current buffer ~
+    command! -nargs=0 Format :call CocAction('format')
+
+    add `:Fold` command to fold current buffer ~
+    command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+    add `:OR` command for organize imports of the current buffer ~
+    command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+    mappings using CoCList ~
+    show all diagnostics ~
+    nnoremap <silent> ,a  :<C-u>CocList diagnostics<cr>
+    manage extensions ~
+    nnoremap <silent> ,e  :<C-u>CocList extensions<cr>
+    show commands ~
+    nnoremap <silent> ,c  :<C-u>CocList commands<cr>
+    find symbol of current document ~
+    nnoremap <silent> ,o  :<C-u>CocList outline<cr>
+    search workspace symbols ~
+    nnoremap <silent> ,s  :<C-u>CocList -I symbols<cr>
+    do default action for next item ~
+    nnoremap <silent> ,j  :<C-u>CocNext<CR>
+    do default action for previous item ~
+    nnoremap <silent> ,k  :<C-u>CocPrev<CR>
+    resume latest coc list ~
+    nnoremap <silent> ,p  :<C-u>CocListResume<CR>
+
+==============================================================================
+3. Extensions                                                      *Extensions*
+
+3.1 ctrlp ~
+    decent autocomplete
+3.2 lightline ~
+    nice looking bottom bars
+3.3 gruvbox ~
+    awesome theme
+3.4 coc ~
+    integration into language servers
+3.5 yats ~
+    theme plugin (not sure if this is only for typescript or not)
