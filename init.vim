@@ -7,6 +7,10 @@ call plug#begin('~/.config/nvim/plugged')
     " gruvbox colorscheme. Seems to work the best for me.
     Plug 'morhetz/gruvbox'
 
+    " fuzzy file finder
+    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf.vim'
+
     " vim wiki
     " Plug 'vimwiki/vimwiki'
 
@@ -15,6 +19,12 @@ call plug#begin('~/.config/nvim/plugged')
 
     " syntax file
     Plug 'HerringtonDarkholme/yats.vim'
+
+    " Nerdtree for working with things
+    Plug 'scrooloose/nerdtree'
+
+    " easy moving
+    Plug 'easymotion/vim-easymotion'
 " }
 
 call plug#end()
@@ -178,6 +188,8 @@ let mapleader="\<SPACE>"
 
     " get quick help
     nmap <leader>? :help crzytrane<cr>
+
+    nmap <leader>t :NERDTreeToggle<cr>
 " }
 
 " Plugin Settings {
@@ -185,6 +197,8 @@ let mapleader="\<SPACE>"
         nmap <leader><leader> :CocCommand<cr>
     " }
     " CtrlP {
+        " Set working path
+        let g:ctrlp_working_path_mode = 'ra'
         " Open file menu
         nnoremap <leader>o :CtrlP<cr>
         " Open buffer menu
