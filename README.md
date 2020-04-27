@@ -13,6 +13,11 @@ Update:
 
 *NOTE:* neovim sometimes freezes when updating like this. In that case please run neovim and then manually run the three commands listed above.
 
+## Usage
+
+Showing help
+    To show help either <leader>? or :help crzytrane
+
 ## Contributing
 
 1. Fork it!
